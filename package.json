@@ -22,6 +22,7 @@
   "homepage": "https://github.com/dartamon/SchiresonBot#readme",
   "dependencies": {
     "botbuilder": "^3.6.0",
+    "https": "^1.0.0",
     "restify": "^4.3.0"
   }
 }
