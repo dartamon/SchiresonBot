@@ -7,6 +7,7 @@ var builder = require('botbuilder');
 
 // Setup Restify Server
 var server = restify.createServer();
+server.use(restify.queryParser());
 server.listen(process.env.port || process.env.PORT || 3978, function () {
    console.log('%s listening to %s', server.name, server.url); 
 });
@@ -31,3 +32,9 @@ server.get('/', restify.serveStatic({
  directory: __dirname,
  default: '/index.html'
 }));
+
+function respond(req, res, next) {
+    res.send(req.params)
+}
+
+server.get('/botpoint/', respond)
