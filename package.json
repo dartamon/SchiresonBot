@@ -1,7 +1,7 @@
 {
   "name": "schireson-bot",
   "version": "1.0.0",
-  "description": "Schireson trial bot",
+  "description": "",
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -10,11 +10,7 @@
     "type": "git",
     "url": "git+https://github.com/dartamon/SchiresonBot.git"
   },
-  "keywords": [
-    "schireson",
-    "bot"
-  ],
-  "author": "Dmitri Artamonov",
+  "author": "",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/dartamon/SchiresonBot/issues"
@@ -22,7 +18,6 @@
   "homepage": "https://github.com/dartamon/SchiresonBot#readme",
   "dependencies": {
     "botbuilder": "^3.6.0",
-    "https": "^1.0.0",
     "restify": "^4.3.0"
   }
 }
