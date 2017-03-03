@@ -36,9 +36,13 @@ server.get('/', restify.serveStatic({
 function respond(req, res, next) {
     // Decode the object from the request
     var query_string = new Buffer(req.params['input'], 'base64').toString('ascii');
-    res.send(query_string);
-    //var returnBuffer = new Buffer(JSON.stringify({"hello":"world"})).toString("base64");
-    //res.send(req.params)
+    var input_object = JSON.parse(query_string);
+    var return_object = { "success" : true,
+        "respondent_id" : input_object.respondent_id,
+        "last_question_id" : input_object.last_question_id,
+        "value" : input_object.value };
+    var returnBuffer = new Buffer(JSON.stringify(return_object)).toString("base64");
+    res.send(returnBuffer);
 }
 
 server.get('/botpoint/', respond)
