@@ -34,7 +34,11 @@ server.get('/', restify.serveStatic({
 }));
 
 function respond(req, res, next) {
-    res.send(req.params)
+    // Decode the object from the request
+    var query_string = new Buffer(req.params['input'], 'base64').toString('ascii');
+    res.send(query_string);
+    //var returnBuffer = new Buffer(JSON.stringify({"hello":"world"})).toString("base64");
+    //res.send(req.params)
 }
 
 server.get('/botpoint/', respond)
